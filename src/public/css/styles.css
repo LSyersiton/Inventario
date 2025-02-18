@@ -1,4 +1,5 @@
 /* Definir variables de color */
+/* Variables generales para toda la aplicación */
 :root {
     --background-color: #f5f5f5;
     --text-color: #222;
@@ -24,6 +25,9 @@ body{
     'Helvetica Neue', sans-serif;
     transition: 0.3s;
 }
+
+/* estilos para el index */
+
 .main-container{
     display: flex;
     height: 100vh;
@@ -35,12 +39,11 @@ body{
     align-items: center;
     justify-content: space-between;
     position: fixed; /* Fijar en la parte superior */
-    margin-top: 0%;
     width: 100%; /* Ancho completo */
     padding: 10px 20px; /* Espaciado interno */
     background: rgba(255, 255, 255, 0.1); /* Ligera transparencia */
     backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
-    border-bottom: 0.5px solid #000; /* Borde inferior */
+    border-bottom: 0.5px solid var(--text-color); /* Borde inferior */
 }
 
 .nav-container {
@@ -104,6 +107,41 @@ body{
     visibility: visible;
 }
 
+.submenu-sucursales {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    flex-direction: column;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+.nav-container ul li:hover .submenu-sucursales {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu-marcas {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    flex-direction: column;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+.nav-container ul li:hover .submenu-marcas {
+    opacity: 1;
+    visibility: visible;
+}
 #toggleDarkMode {
     border: none;
     background-color: var(--card-background);
@@ -198,4 +236,136 @@ body{
 /* Efecto de clic */
 .button:active {
     transform: scale(0.95);
+}
+
+/* Estilos para el apartado de agregar */
+
+.section-form{
+    display: flex;
+    margin-top: 50px; /* Espacio para el menú */
+    color: var(--text-color);
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 800px;
+    padding: 20px;
+    background: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    margin: 50px auto;
+    transition: all 0.3s ease;
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Filas con inputs en la misma línea */
+.first-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Estilo general de cada campo */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Etiquetas de los campos */
+.form-group label {
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+/* Estilo de inputs y selects */
+.form-group input,
+.form-group select {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid var(--text-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.form-group textarea{
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid var(--text-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Estilos específicos para el textarea */
+.form-group textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Estilo del botón */
+.btn-submit {
+    width: 150px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 600px) {
+    .first-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-group {
+        min-width: 100%;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
 }

@@ -17,8 +17,6 @@ app.use(express.static(path.join(process.cwd(), 'public')))
 app.use('/', routerTemp)
 app.use('/agregar', agregar)
 
-console.log(agregar) // Debería imprimir un objeto Router de Express
-
 app.listen(3000, () => {
   console.log('Servidor en ejecución en http://localhost:3000')
 })
