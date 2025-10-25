@@ -4,14 +4,15 @@ export class Conexion {
   async init () {
     try {
       this.conexion = await mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '5432SE#@Z',
-        database: 'inventario'
+        host: process.env.DB_HOST || 'localhost',
+        user: process.env.DB_USER || 'root',
+        password: process.env.DB_PASSWORD || '5432SE#@Z',
+        database: process.env.DB_NAME || 'inventario'
       })
-      console.log('✅ Conectado a la base de datos')
+      return this.conexion
     } catch (error) {
       console.error('❌ Error en la conexión a la base de datos:', error.message)
+      throw error
     }
   }
 }

@@ -71,7 +71,7 @@ body{
     color: var(--text-color);
 }
 
-.submenu-productos {
+.submenu-productos, .submenu-info, .submenu-sucursales, .submenu-marcas, .submenu-tipo_producto {
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -84,64 +84,12 @@ body{
     transition: opacity 0.3s ease-in-out, visibility 0.3s;
 }
 
-.nav-container ul li:hover .submenu-productos {
+.nav-container ul li:hover .submenu-productos, .nav-container ul li:hover .submenu-info, .nav-container ul li:hover .submenu-marcas,
+.nav-container ul li:hover .submenu-sucursales, .nav-container ul li:hover .submenu-tipo_producto {
     opacity: 1;
     visibility: visible;
 }
 
-.submenu-info {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    flex-direction: column;
-    background-color: var(--background-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    padding: 10px;
-    z-index: 1;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s;
-}
-
-.nav-container ul li:hover .submenu-info {
-    opacity: 1;
-    visibility: visible;
-}
-
-.submenu-sucursales {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    flex-direction: column;
-    background-color: var(--background-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    padding: 10px;
-    z-index: 1;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s;
-}
-
-.nav-container ul li:hover .submenu-sucursales {
-    opacity: 1;
-    visibility: visible;
-}
-
-.submenu-marcas {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    flex-direction: column;
-    background-color: var(--background-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    padding: 10px;
-    z-index: 1;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s;
-}
-
-.nav-container ul li:hover .submenu-marcas {
-    opacity: 1;
-    visibility: visible;
-}
 #toggleDarkMode {
     border: none;
     background-color: var(--card-background);
@@ -347,6 +295,7 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 1vh;
     transition: background 0.3s ease-in-out;
 }
 

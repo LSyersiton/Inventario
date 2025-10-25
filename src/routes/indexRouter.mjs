@@ -1,13 +1,15 @@
 import { Router } from 'express'
+import { ProductoController } from '../controllers/productoController.mjs'
 
 export class IndexRouter {
+  constructor () {
+    this.productoController = new ProductoController()
+  }
+
   inicio () {
     const router = Router()
 
-    router.get('/', (req, res) => {
-      res.render('index') // Asegúrate de que existe "views/agregar.ejs"
-    })
-
+    router.get('/', (req, res) => this.productoController.listarDatosProductos(req, res))
     return router
   }
 }

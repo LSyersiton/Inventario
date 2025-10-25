@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script type="module" src="/js/modo_oscuro.js"></script>
+</head>
+<body>
+    <main class="main-container">
+        <%- include('partials/header') %>
+        <section class="section-form">
+            <div class="form-div" id="form-div">
+                <h2>Agregar Productos</h2>
+                <form class="form-container" id="form-container" action="/agregarTipo_producto" method="POST">
+                    <div class="first-row">
+                        <div class="form-group">
+                            <label for="nombre">Dirección</label>
+                            <input type="text" id="nombre" name="tipoProducto" placeholder="nombre" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">Agregar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

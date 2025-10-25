@@ -1,0 +1,32 @@
+services:
+  app:
+    container_name: inventario
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=5432SE#@Z
+      - DB_NAME=inventario
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+    command: ["npm", "start"]
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_inventario
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 5432SE#@Z
+      MYSQL_DATABASE: inventario
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+

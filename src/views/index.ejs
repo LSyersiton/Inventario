@@ -16,7 +16,9 @@
                 <h1>Lista de productos</h1>
             </div>
             <section class="section-cards">
-                <%- include('partials/cards') %>
+                <%- include('partials/cards', {
+                    productos
+                }) %>
             </section>
         </div>
     </main>
