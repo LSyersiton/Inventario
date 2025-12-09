@@ -1,7 +1,7 @@
 services:
-  app:
+  backend:
     container_name: inventario
-    build: .
+    build: ./backend
     ports:
       - "3000:3000"
     environment:
@@ -12,8 +12,20 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/usr/src/app
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
     command: ["npm", "start"]
+  frontend:
+    build: ./frontend
+    container_name: inventario-frontend
+    platform: linux/amd64
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - backend
 
   db:
     image: mysql:8.0

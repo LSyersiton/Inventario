@@ -1,0 +1,68 @@
+
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Fijar en la parte superior */
+    width: 100%; /* Ancho completo */
+    padding: 10px 20px; /* Espaciado interno */
+    background: rgba(255, 255, 255, 0.1); /* Ligera transparencia */
+    backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+    border-bottom: 0.5px solid var(--text-color); /* Borde inferior */
+}
+
+.nav-container {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    display: flex;
+    justify-content: center; /* Centrar el menú */
+}
+
+.nav-container ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-container ul li {
+    margin: 0 30px;
+}
+
+.nav-container ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.submenu-productos, .submenu-info, .submenu-sucursales, .submenu-marcas, .submenu-tipo_producto {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    flex-direction: column;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+.nav-container ul li:hover .submenu-productos, .nav-container ul li:hover .submenu-info, .nav-container ul li:hover .submenu-marcas,
+.nav-container ul li:hover .submenu-sucursales, .nav-container ul li:hover .submenu-tipo_producto {
+    opacity: 1;
+    visibility: visible;
+}
+
+#toggleDarkMode {
+    border: none;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-right: 0px;
+}
+

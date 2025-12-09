@@ -1,0 +1,83 @@
+.div-content {
+    display: flex;
+    margin-top: 50px; /* Espacio para el menú */
+    color: var(--text-color);
+    text-align: center;
+    flex-direction: column;
+}
+.section-cards{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-product {
+    max-width: 350px;
+    width: 100%;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    margin: 10px, 0px;
+    transition: all 0.3s ease;
+}
+
+.body-card img{
+    width: 60%;
+    border-radius: 10px 10px 0 0;
+}
+
+.footer-card{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+}
+
+.button {
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Botón "Comprar" en azul */
+.button-buy {
+    background-color: #007BFF;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+.button-buy:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 10px rgba(0, 123, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Botón "Ver producto" en verde */
+.button-see {
+    background-color: #28A745;
+    color: white;
+    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+}
+
+.button-see:hover {
+    background-color: #1e7e34;
+    box-shadow: 0 6px 10px rgba(40, 167, 69, 0.5);
+    transform: scale(1.05);
+}
+
+/* Efecto de clic */
+.button:active {
+    transform: scale(0.95);
+}
