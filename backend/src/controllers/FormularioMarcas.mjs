@@ -21,7 +21,6 @@ export class FormularioMarcas {
     try {
       const { marca } = req.body
       await this.marcasModel.agregar(marca)
-      res.redirect('/agregar_marcas')
     } catch (error) {
       console.error('Error al agregar marca:', error)
       res.status(500).json({ error: error.message })

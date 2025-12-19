@@ -12,7 +12,7 @@ class SucursalesServices {
         throw error;
     }
     }
-    /*static async addSucursal(sucursal) {
+    static async addSucursal(sucursal) {
         try {
             const response = await fetch("http://localhost:3000/agregar_sucursales", {
                 method: "POST",
@@ -30,7 +30,7 @@ class SucursalesServices {
             console.error('Error adding sucursal:', error);
             throw error;
         }
-    }*/
+    }
 }
 
 export default SucursalesServices;

@@ -21,7 +21,6 @@ export class TipoProductoController {
     try {
       const { tipoProducto } = req.body
       await this.tipoProductoModel.agregar(tipoProducto)
-      res.redirect('/agregarTipo_producto')
     } catch (error) {
       console.error('Error al agregar tipo de producto:', error)
       res.status(500).json({ error: error.message })

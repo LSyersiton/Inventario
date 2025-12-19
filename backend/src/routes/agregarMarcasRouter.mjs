@@ -11,7 +11,7 @@ export class AgregarMarcasRouter {
     router.get('/', (req, res) => {
       res.render('agregar_marcas') // Asegúrate de que existe "views/agregar.ejs"
     })
-    router.post('/agregar', this.formularioMarcas.agregar.bind(
+    router.post('/', this.formularioMarcas.agregar.bind(
       this.formularioMarcas)) // Llama al controlador cuando se envíe el formulario
     return router
   }

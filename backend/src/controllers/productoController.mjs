@@ -58,14 +58,23 @@ export class ProductoController {
 
   async agregar (req, res) {
     try {
+      console.log('CWD:', process.cwd())
+      console.log('Agregar producto request body:', req.body)
+      console.log('Agregar producto request file:', req.file)
       const { nombre, precio, stock, idMarca, idTipoProducto, descripcion } = req.body
       const imagen = req.file ? req.file.filename : null
-      console.log('IMAGEN:', imagen)
       await this.productosModel.agregarProducto(nombre, descripcion, precio, stock, imagen, idTipoProducto, idMarca)
-      res.redirect('/agregar') // Redirige a la página de agregar productos después de agregar uno nuevo
+      res.json({
+        ok: true,
+        message: 'Producto agregado correctamente'
+      })
     } catch (error) {
-      console.error('Error al agregar el producto:', error)
-      res.status(500).send('Error al agregar el producto')
+      console.error(error)
+      res.status(500).json({
+        ok: false,
+        error: error.message,
+        stack: error.stack
+      })
     }
   }
 

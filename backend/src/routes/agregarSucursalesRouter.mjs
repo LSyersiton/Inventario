@@ -9,8 +9,7 @@ export class AgregarSucursalesRouter {
   inicio () {
     const router = Router()
     router.get('/', this.formularioSucursal.listarDatos.bind(this.formularioSucursal)) // Renderiza el formulario
-    router.post('/', this.formularioSucursal.agregar.bind(
-      this.formularioSucursal)) // Llama al controlador cuando se envíe el formulario
+    router.post('/', this.formularioSucursal.agregar.bind(this.formularioSucursal)) // Llama al controlador cuando se envíe el formulario
     return router
   }
 }
